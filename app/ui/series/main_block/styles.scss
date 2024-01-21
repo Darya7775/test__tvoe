@@ -1,0 +1,204 @@
+.main-block {
+  width: 100%;
+  padding: 90px 0 0 2px;
+
+  font-size: 1.75em;
+  line-height: 120%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+
+  @media (max-width: 60em) {
+    padding: 90px 16px 0;
+
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 47.97em) {
+    font-size: 1em;
+    gap: 15px;
+  }
+}
+
+.main-block__title {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.main-block__wrapper-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+
+  width: 100vw;
+  max-width: 1400px;
+  height: auto;
+
+  img {
+    position: relative!important;
+    inset: unset!important;
+  }
+}
+
+.main-block__wrapper-title-img {
+  max-width: 367px;
+  max-height: 132px;
+  height: auto;
+
+  position: relative;
+
+  img {
+    position: relative!important;
+    inset: unset!important;
+    object-fit: contain!important;
+  }
+
+  @media (max-width: 90em) {
+    justify-self: start;
+    max-width: 250px;
+  }
+
+  @media (max-width: 47.97em) {
+    max-width: 170px;
+  }
+}
+
+.main-block__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  margin-top: 8px;
+
+  @media (max-width: 60em) {
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  @media (max-width: 47.97em) {
+    gap: 15px;
+  }
+}
+
+.main-block__wrapper-buttons {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 82px;
+
+  @media (max-width: 60em) {
+    margin-top: 30px;
+  }
+
+  @media (max-width: 47.97em) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    row-gap: 10px;
+    column-gap: 20px;
+
+    margin-top: 0;
+  }
+}
+
+.main-block__rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 76px;
+  height: 48px;
+  background-color: var(--color-comet);
+  border-radius: 12px;
+
+  font-weight: 500;
+
+  @media (max-width: 47.97em) {
+    width: 50px;
+    height: 30px;
+  }
+}
+
+.main-block__text {
+  margin: 0;
+
+  width: 735px;
+
+  @media (max-width: 60em) {
+    width: 100%;
+  }
+}
+
+.main-block__button {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    width: 32px;
+    height: 32px;
+    z-index: -1;
+    background-size: 100% 100%;
+  }
+
+  &--watch {
+    @media (max-width: 47.97em) {
+      grid-area: 1/1/2/-1;
+    }
+  }
+
+  &--trailer {
+    @media (max-width: 47.97em) {
+      grid-area: 2/1/3/-1;
+    }
+  }
+
+  &--bookmark {
+    padding: 22px 50px;
+
+    &::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M18 2H6C4.897 2 4 2.897 4 4V22L12 17.428L20 22V4C20 2.897 19.103 2 18 2ZM18 18.553L12 15.125L6 18.553V4H18V18.553Z" fill="rgba(186, 186, 186, 1)"/></svg>');
+    }
+
+    @media (max-width: 47.97em) {
+      grid-area: 3/1/4/2;
+
+      padding: 22px 50px;
+    }
+  }
+
+  &--heart {
+    padding: 22px 50px;
+
+    &::before {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4.59511C10.9104 3.59321 9.48419 3.03716 8.00398 3.03711C7.22052 3.03793 6.44495 3.19367 5.72192 3.49538C4.99888 3.79709 4.34265 4.2388 3.79098 4.79511C1.43798 7.15811 1.43898 10.8541 3.79298 13.2071L11.125 20.5391C11.295 20.8381 11.623 21.0311 12 21.0311C12.1548 21.0296 12.3071 20.9918 12.4446 20.9208C12.5822 20.8498 12.7011 20.7475 12.792 20.6221L20.207 13.2071C22.561 10.8531 22.561 7.15811 20.205 4.79111C19.6536 4.23583 18.9979 3.79501 18.2756 3.49399C17.5532 3.19298 16.7785 3.03771 15.996 3.03711C14.5158 3.03735 13.0897 3.59338 12 4.59511ZM18.791 6.20511C20.354 7.77611 20.355 10.2301 18.793 11.7931L12 18.5861L5.20698 11.7931C3.64498 10.2301 3.64598 7.77611 5.20498 6.20911C5.96498 5.45311 6.95898 5.03711 8.00398 5.03711C9.04898 5.03711 10.039 5.45311 10.793 6.20711L11.293 6.70711C11.3858 6.80006 11.496 6.87379 11.6173 6.9241C11.7386 6.97441 11.8686 7.00031 12 7.00031C12.1313 7.00031 12.2614 6.97441 12.3827 6.9241C12.504 6.87379 12.6142 6.80006 12.707 6.70711L13.207 6.20711C14.719 4.69811 17.281 4.70211 18.791 6.20511Z" fill="rgba(186, 186, 186, 1)"/></svg>');
+    }
+
+    @media (max-width: 47.97em) {
+      grid-area: 3/2/4/-1;
+
+      padding: 22px 50px;
+    }
+  }
+
+  @media (max-width: 47.97em) {
+    width: 100%;
+  }
+}

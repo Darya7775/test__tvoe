@@ -1,0 +1,156 @@
+.seasons {
+  width: 100%;
+  margin-top: 113px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @media (max-width: 60em) {
+    padding: 0 16px;
+    margin-top: 40px;
+  }
+}
+
+.seasons__wrapper {
+  display: flex;
+  gap: 45px;
+  align-items: center;
+
+  margin-left: 3px;
+
+  @media (max-width: 60em) {
+    gap: 30px;
+  }
+}
+
+.seasons__wrapper-slider {
+  width: 100%;
+  margin-left: -5px;
+
+  .swiper-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+  }
+
+  .swiper-wrapper .swiper-slide {
+    width: auto!important;
+  }
+}
+
+.seasons__wrapper-img {
+  width: 544px;
+  height: auto;
+  position: relative;
+
+  img {
+    position: relative!important;
+    inset: unset!important;
+    object-fit: contain!important;
+  }
+
+  @media (max-width: 100em) {
+    width: 344px;
+  }
+
+  @media (max-width: 60em) {
+    width: 246px;
+  }
+}
+
+.seasons__tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.seasons__button {
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-jaguar);
+  transition: background-color .7s ease-out;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 110%;
+  color: var(--color-silver);
+
+  cursor: pointer;
+  user-select: none;
+
+  @media (hover: hover) {
+    &:hover:not(.focus-visible) {
+      background-color: var(--color-paynes-grey);
+      transition: background-color .7s ease-out;
+    }
+  }
+
+  &--active {
+    background-color: var(--color-default-white);
+    color: var(--color-black-russian);
+    cursor: default;
+
+    @media (hover: hover) {
+      &:hover:not(.focus-visible) {
+        background-color: var(--color-default-white);
+      }
+    }
+  }
+}
+
+.seasons__link {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform .7s ease-out;
+
+  margin: 8px 8px 0;
+
+  @media (hover: hover) {
+    &:hover:not(.focus-visible) {
+      transform: scale(1.03);
+      transition: transform .7s ease-out;
+    }
+  }
+
+  @media (max-width: 60em) {
+    margin: 4px 4px 0;
+  }
+}
+
+.seasons__number {
+  display: block;
+
+  font-weight: 500;
+  font-size: 1.75em;
+  line-height: 120%;
+
+  margin-top: 15px;
+
+  @media (max-width: 100em) {
+    margin-top: 10px;
+  }
+
+  @media (max-width: 60em) {
+    font-size: 1.2em;
+  }
+}
+
+.seasons__runtime {
+  display: block;
+
+  font-size: 1.5em;
+  line-height: 120%;
+  color: var(--color-silver);
+
+  @media (max-width: 60em) {
+    font-size: 1em;
+  }
+}

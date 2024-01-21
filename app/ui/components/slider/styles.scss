@@ -1,0 +1,57 @@
+.slider {
+  width: 100%;
+
+  position: relative;
+
+  &:hover {
+    .slider__button {
+      opacity: 1;
+    }
+  }
+
+  & .swiper-button-disabled {
+    display: none;
+  }
+}
+
+.slider__button {
+  display: block;
+  opacity: 0;
+
+  width: 40px;
+  height: 65px;
+
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' style='fill: rgba(255, 255, 255, 1);transform: ;msFilter:;'><path d='M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z'></path></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--color-comet);
+  transition: opacity .3s ease-out;
+
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: none;
+  border-radius: 8px;
+  border: 1px solid var(--color-black-russian);
+
+  cursor: pointer;
+  user-select: none;
+
+  &--prev {
+    left: 10px;
+    transform: rotate(180deg) translateY(50%);
+  }
+
+  &--next {
+    right: 10px;
+  }
+
+  @media (hover: hover) {
+    &:hover:not(.focus-visible) {
+      opacity: 0.6;
+      transition: opacity .15s;
+    }
+  }
+}

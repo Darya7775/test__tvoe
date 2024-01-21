@@ -1,0 +1,46 @@
+@mixin rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 500;
+  line-height: 120%;
+
+  padding: 14px 22px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+
+  position: absolute;
+  z-index: 1;
+
+  @media (max-width: 60em) {
+    font-size: 1.4em;
+
+    min-width: 55px;
+    height: 38px;
+  }
+
+  @media (max-width: 47.97em) {
+    font-size: 1.1em;
+
+    min-width: 45px;
+    height: 28px;
+  }
+}
+
+@mixin background-gradient {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    z-index: -1;
+
+    background: linear-gradient(159.31deg, #5712b1 23.59%, #2b6cfa 80.7%);
+    opacity: 0;
+    transition: opacity .7s ease-out;
+
+    @media (max-width: 100em) {
+      border-radius: 16px;
+    }
+  }
+}
